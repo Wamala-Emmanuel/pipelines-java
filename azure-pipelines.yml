@@ -22,6 +22,6 @@ steps:
     
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: './target/helloworld.war'
+    PathtoPublish: './target/*.war'
     ArtifactName: java-app-artifact
 
