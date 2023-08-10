@@ -20,7 +20,8 @@ steps:
     cd target
     ls -a
     
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: 'target/**.jar'
-#     ArtifactName: java-app-artifact
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'target/**.jar'
+    ArtifactName: java-app-artifact
+
