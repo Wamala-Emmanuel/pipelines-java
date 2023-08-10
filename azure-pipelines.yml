@@ -4,6 +4,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  artifactName: "helloworld"
+
 steps:
 - task: Maven@4
   inputs:
