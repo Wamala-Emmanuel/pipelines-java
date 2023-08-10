@@ -22,6 +22,6 @@ steps:
     
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'target/**.jar'
+    PathtoPublish: 'target/*.jar'
     ArtifactName: java-app-artifact
 
