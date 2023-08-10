@@ -15,13 +15,9 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**src/test/java/MyTest.xml'
     goals: 'package'
-
-- script: |
-    cd target
-    ls -a
     
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'target/*.war'
+    PathtoPublish: 'target/${artifactName}.war'
     ArtifactName: java-app-artifact
 
