@@ -9,6 +9,7 @@ variables:
 
 steps:
 - task: Maven@4
+  displayName: Install dependencies, build & package (.war file)
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -20,6 +21,7 @@ steps:
     goals: 'package'
     
 - task: PublishBuildArtifacts@1
+  displayName: Publish build artifact
   inputs:
     PathtoPublish: 'target/${artifactName}.war'
     ArtifactName: java-app-artifact
