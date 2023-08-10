@@ -16,8 +16,9 @@ steps:
     testResultsFiles: '**src/test/java/MyTest.xml'
     goals: 'package'
 
-- script: ls -a
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: 'target/**.jar'
-    ArtifactName: java-app-artifact
+- script: cd target
+          ls -a
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: 'target/**.jar'
+#     ArtifactName: java-app-artifact
