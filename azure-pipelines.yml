@@ -23,6 +23,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: Publish build artifact
   inputs:
-    PathtoPublish: 'target/${artifactName}.war'
+    PathtoPublish: 'target/$artifactName.war'
     ArtifactName: java-app-artifact
 
