@@ -4,12 +4,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  artifactName: "helloworld"
-
 steps:
 - task: Maven@4
-  displayName: Install dependencies, build & package (.war file)
+  displayName: Install dependencies, Build & Package (.war file)
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -23,6 +20,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: Publish build artifact
   inputs:
-    PathtoPublish: 'target/$artifactName.war'
+    PathtoPublish: 'target/helloworld.war'
     ArtifactName: java-app-artifact
 
