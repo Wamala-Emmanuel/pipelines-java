@@ -5,7 +5,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Maven@3
+- task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -13,5 +13,11 @@ steps:
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    testResultsFiles: '**src/test/java/MyTest.xml'
     goals: 'package'
+
+- script: ls -a
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'target/**.jar'
+    ArtifactName: java-app-artifact
